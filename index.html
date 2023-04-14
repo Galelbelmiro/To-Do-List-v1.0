@@ -5,8 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+    <!-- INÍCIO DIV CONTEÚDO -->
+    <div class="conteudo">
+
+            <!-- INÍCIO DIV TOPO -->
+            <div class="topo">
+                <input type="text" id="input_nova_tarefa" placeholder="Adicionar Nova Tarefa ... ">
+                
+                <!-- BOTÃO QUE ACRECENTA NOVAS TAREFAS -->
+                <button> <i class="fa-solid fa-plus "> </i> </button>
+            </div>
+            <!-- FIM DIV TOPO -->
+
+
+            <!-- INICIO LISTA TAREFAS -->
+            <ul id="lista_de_Tarefas">
+
+            </ul>
+             <!-- FIM LISTA TAREFAS -->
+    </div>
+    <!-- FIM DIV CONTEÚDO -->
+
+
+    <!-- INICIO JANELA DE EDIÇÃO -->
+    <div id="janela_de_edicao">
+        <button id="botao_de_fechar_janela_edicao"> <i class="fa-solid fa-x fa-2x"></i> </button>
+        <h2>#6532</h2>
+        <hr>
+
+        <form>
+            <div class="frm-linha">
+                <label for="nome">Nome</label>
+                <input type="text" id="input_tarefa_nome_edicao">
+            </div>
+
+            <div class="frm-linha">
+                <button id="btn_atualizar_tarefa">Salvar</button>
+            </div>  
+        </form>
+    </div>
+     <!-- FIM JANELA DE EDIÇÃO -->
+
+
+     <!-- INÍCIO FUNDO PRETO EDICÃO-->
+     <div id="janela_edicao_fundo"> 
+
+     </div>
+     <!-- INÍCIO FUNDO PRETO EDICÃO -->
+
+
+    <script src="js/index.js"> </script>
 </body>
 </html>
