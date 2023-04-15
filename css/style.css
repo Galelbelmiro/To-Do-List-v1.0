@@ -1,16 +1,10 @@
-
-/* CONFIGURAÇÕES GERAIS DE ESTILO */
 body{
-    background: rgb(36, 36, 86);
+    background: #000;
     color: #fff;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
 }
-
-/**************************************************************************/
-
-/* ESTILO DO CONTEÚDO PRINCIPAL  */
 .conteudo{
     margin: 0 auto;
     width: 100%;
@@ -18,186 +12,183 @@ body{
     margin-top: 50px;
     margin-bottom: 50px;
     padding: 55px;
-    border: 1px solid rgb(0, 0, 0);
-    background: rgb(10, 166, 233);
-    border-radius: 5px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background: rgba(78, 80, 82, 0.978);
+    border-radius: 13px;
+    border: 1px solid #ffffff;
 }
-
-/* POSICIONAMOS O LAYOUT DO INPUT ONDE ADICIONAMOS NOVAS TAREFAS E O BOTÃO [+]*/
-.topo {
+/* AQUI NOS REFERIMOS APENAS A DIV TOPO */
+.topo{
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
 }
-
+/* AQUI NOS REFERIMOS APENAS AO INPUT */
 .topo input{
     width: 350px;
     padding: 15px;
     outline: none;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    font-size: 1.3rem;
-    color: rgb(255, 255, 255);
-    background: rgb(22, 21, 21);
-    caret-color:  rgb(255, 255, 255);
+    border-radius: 12px;
+    border: 1px solid #ffffff;
+    font-size: 1.2rem;
+    color: white;
+    background: #151515;
 }
-
-.topo button {
-    background-color: rgb(36, 36, 86);
+/* AQUI NOS REFERIMOS APENAS AO BOTÃO */
+.topo button{
     color: rgb(255, 255, 255);
     cursor: pointer;
-    border-radius: 10%;
+    background: #bf0e0e;
     outline: none;
+    border: 1px solid white;
+    border-radius: 12px;
     width: 45px;
-    border: 1px solid rgb(255, 255, 255);
 }
-
-.topo button:hover {
-    background-color: rgb(45, 45, 105);
+/* AQUI NOS REFERIMOS APENAS AO ESTADO HOVER DO BOTÃO */
+.topo button:hover{
+    background: #eb1212;
 }
-
+/*ESSA PARTE DO CÓDIGO SERVE PARA QUE CASO O NOME DA TAREFA SEJA MUITO GRANDE,
+  NÃO QUEBRE O NOSSO LAYOUT */
 .textoTarefa {
-    overflow: hidden; /*MANTÉM O TEXTO DENTRO DO ELEMENTO*/
-    text-overflow: ellipsis; /* ellipsis significa ... */
-    width: 290px; /* LARGURA */
-    white-space: nowrap; /* SEM QUEBRA */
+   overflow: hidden;
+   /* VAI APARECER ... DEVIDO AO text-overflow: ellipsis */
+   text-overflow: ellipsis;
+   /*LARGURA*/
+   width: 290px;
+   
+   /* SEM QUEBRA DE LINHA*/
+   white-space: nowrap;
 }
-
-/* AQUI DEFINIMOS O ESTILO DA NOSSA LISTA */
-#lista_de_tarefas {
+/*AQUI NOS REFERIMOS AO ESTILO PADRÃO PARA LISTA TAREFAS*/
+#listaTarefas{
     list-style: none;
     padding: 0px;
     margin: 0px;
 }
-
-#lista_de_tarefas li {
-    padding: 20px;
-    background: #151515;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+#listaTarefas li{
+   padding: 20px;
+   background: #151515;
+   border: 1px solid white;
+   border-radius: 12px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 20px;
 }
-
 .btnAcao{
-    border-radius: 5px;
+    border-radius: 20px;
     width: 38px;
     height: 38px;
-    border: 1px solid #fff;
+    border: 1px solid white;
     cursor: pointer;
     margin-right: 8px;
-    color: #fff;
-    background: rgb(118, 176, 31);
-}
-
-.btnAcao:hover{
-    background: rgb(149, 221, 41);
-}
-
-/**************************************************************************/
-
-/* ESTILO DA TELA DE EDIÇÃO */
-
-#janela_de_edicao{
-position: fixed;
-border: 1px solid rgb(255, 255, 255);
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
-padding: 20px;
-background: #191818;
-width: 415px;
-z-index: 200;
-/*FAZ A JANELA FICAR INVISIVEL*/
-/* display: none;   */
-border-radius: 5px;
-}
-
-/*FAZ A JANELA FICAR VISIVEL NOVAMENTE, SUBSESCREVENDO A REGRA ANTERIOR*/
-#janela_de_edicao.abrir{
+    color: white;
+    background: #bf0e0e;
+    outline: none;
+ }
+ .btnAcao:hover{
+    border-radius: 20px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid white;
+    cursor: pointer;
+    margin-right: 8px;
+    color: white;
+    background: #eb1212;
+ }
+ #janelaEdicao{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    background: #191818;
+    border: 1px solid #2f2e2e;
+    width: 415px;
+    border-radius: 12px;
+    z-index: 200;
+    /*FAZ A JANELA FICAR INVISIVEL*/
+    display: none;
+ }
+   /*FAZ A JANELA FICAR VISIVEL NOVAMENTE, SUBSESCREVENDO A REGRA ANTERIOR*/
+ #janelaEdicao.abrir{
     display: block !important;
-}
-
-#janela_edicao_fundo{
+ }
+ #janelaEdicaoFundo {
     position: fixed;
     top: 0;
-    background-color: #151515;
+    background-color: #000;
     bottom: 0;
     left: 0;
     opacity: 0.9;
     z-index: 100;
     right: 0;
-    /* FAZ A JANELA FICAR INVISIVEL */
+     /*FAZ A JANELA FICAR INVISIVEL*/
     display: none;
-}
-
-/*FAZ A JANELA FICAR VISIVEL NOVAMENTE, SUBSESCREVENDO A REGRA ANTERIOR*/
-#janela_edicao_fundo.abrir{
+ }
+   
+ /*FAZ A JANELA FICAR VISIVEL NOVAMENTE, SUBSESCREVENDO A REGRA ANTERIOR*/
+ #janelaEdicaoFundo.abrir {
     display: block !important;
-}
-
-#botao_de_fechar_janela_edicao{
-    position: absolute;
-    top:-25px;
-    right: -18px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    border: 1px solid rgb(255, 255, 255);
-    background: rgb(24, 23, 23);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    outline: none;
-}
-
-#botao_de_fechar_janela_edicao:hover{
-    background: #3c3a3a;
-    
-}
-
-/*ESTABELECENDO UMA LARGURA E UMA ALTURA PARA O FORM*/
-form{
-    width: 100%;    
+ }
+/* BOTÃO DE FECHAR PAINEL DE EDIÇÃO */
+ #janelaEdicaoBtnFechar {
+   position: absolute;
+   top: -25px;
+   right: -18px;
+   width: 50px;
+   height: 50px;
+   border-radius: 50px;
+   border: 1px solid #2d2c2c;
+   background: #bf0e0e;
+   color: #fff;
+   outline: none;
+   cursor: pointer;
+ }
+ #janelaEdicaoBtnFechar:hover {
+   background: #eb1212;
+ }
+ form{
+    width: 100%;
     margin-top: 20px;
-}
+ }
 
-/*LAYOUT DE EDIÇÃO*/
-.frm-linha{
+ /* LAYOUT DE EDIÇÃO*/
+ .frm-linha{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-}
+ }
 
-/* INPUT DA TELA DE EDIÇÃO */
-.frm-linha input{
-padding: 15px;
-border-radius: 5px;
-outline: none;
-border: 1px solid #191818;
-font-size: 1.24rem;
-background: #2c2c2c;
-color:#fff;
-margin-top: 5px;
-}
+ /* LABEL DE EDIÇÃO */
+ .frm-linha label {
+    margin-bottom: 7px;
+ }
 
-/* BUTTON DA TELA DE EDIÇÃO */
-.frm-linha button{
-    border:1px solid #fff;
-    background: #2c2c2c;
-    cursor: pointer;
-    font-size: 1.3rem;
-    color: #fff;
+ /*IMPUT DE EDIÇÃO*/
+ .frm-linha input {
+    padding: 15px;
+    border-radius: 12px;
     outline: none;
-    height: 50px;
-    border-radius: 5px;
-    padding: 8px;
-    margin-bottom: 10px;
-}
+    border: 1px solid #191818;
+    font-size: 1.2rem;
+    background: #2d2c2d;
+    color: #fff;
+ }
 
-.frm-linha button:hover{
-    background: #3c3a3a;
+ /* BOTÃO DE EDIÇÃO */
+.frm-linha button {
+   border: 1px solid #191818;
+   background: #2d2c2d;
+   cursor: pointer;
+   font-size: 1.3rem;
+   color: #fff;
+   outline: none;
+   height: 50px;
+   border-radius: 12px;
+   padding: 7px;
+   margin-bottom: 10px;
 }
-/**************************************************************************/
+.frm-linha button:hover {
+   background: #3c3a3a;
+}
